@@ -13,6 +13,8 @@
 		E02DBF3321E8F1ED001A3B45 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E02DBF3121E8F1ED001A3B45 /* Main.storyboard */; };
 		E02DBF3521E8F1ED001A3B45 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E02DBF3421E8F1ED001A3B45 /* Assets.xcassets */; };
 		E02DBF3821E8F1ED001A3B45 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E02DBF3621E8F1ED001A3B45 /* LaunchScreen.storyboard */; };
+		E02DBF4221E8F366001A3B45 /* BFSNetworkAssistant.m in Sources */ = {isa = PBXBuildFile; fileRef = E02DBF4121E8F366001A3B45 /* BFSNetworkAssistant.m */; };
+		E02DBF4521E8F4B1001A3B45 /* AFNetworking.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E02DBF4421E8F4B1001A3B45 /* AFNetworking.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +28,9 @@
 		E02DBF3421E8F1ED001A3B45 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E02DBF3721E8F1ED001A3B45 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E02DBF3921E8F1ED001A3B45 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E02DBF4021E8F366001A3B45 /* BFSNetworkAssistant.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BFSNetworkAssistant.h; sourceTree = "<group>"; };
+		E02DBF4121E8F366001A3B45 /* BFSNetworkAssistant.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BFSNetworkAssistant.m; sourceTree = "<group>"; };
+		E02DBF4421E8F4B1001A3B45 /* AFNetworking.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AFNetworking.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -33,6 +38,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E02DBF4521E8F4B1001A3B45 /* AFNetworking.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -58,6 +64,8 @@
 		E02DBF2721E8F1ED001A3B45 /* BFSNetworkAssistant */ = {
 			isa = PBXGroup;
 			children = (
+				E02DBF4321E8F430001A3B45 /* ThirdFrameworks */,
+				E02DBF3F21E8F33B001A3B45 /* VM */,
 				E02DBF2B21E8F1ED001A3B45 /* AppDelegate.h */,
 				E02DBF2C21E8F1ED001A3B45 /* AppDelegate.m */,
 				E02DBF2E21E8F1ED001A3B45 /* ViewController.h */,
@@ -77,6 +85,23 @@
 				E02DBF2921E8F1ED001A3B45 /* main.m */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		E02DBF3F21E8F33B001A3B45 /* VM */ = {
+			isa = PBXGroup;
+			children = (
+				E02DBF4021E8F366001A3B45 /* BFSNetworkAssistant.h */,
+				E02DBF4121E8F366001A3B45 /* BFSNetworkAssistant.m */,
+			);
+			path = VM;
+			sourceTree = "<group>";
+		};
+		E02DBF4321E8F430001A3B45 /* ThirdFrameworks */ = {
+			isa = PBXGroup;
+			children = (
+				E02DBF4421E8F4B1001A3B45 /* AFNetworking.framework */,
+			);
+			path = ThirdFrameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -153,6 +178,7 @@
 				E02DBF3021E8F1ED001A3B45 /* ViewController.m in Sources */,
 				E02DBF2D21E8F1ED001A3B45 /* AppDelegate.m in Sources */,
 				E02DBF2A21E8F1ED001A3B45 /* main.m in Sources */,
+				E02DBF4221E8F366001A3B45 /* BFSNetworkAssistant.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -274,6 +300,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/BFSNetworkAssistant/ThirdFrameworks",
+				);
 				INFOPLIST_FILE = BFSNetworkAssistant/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.bf.BFSNetworkAssistant;
@@ -285,6 +315,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/BFSNetworkAssistant/ThirdFrameworks",
+				);
 				INFOPLIST_FILE = BFSNetworkAssistant/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.bf.BFSNetworkAssistant;
@@ -311,6 +345,7 @@
 				E02DBF3E21E8F1ED001A3B45 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
